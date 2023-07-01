@@ -53,8 +53,6 @@ test("GET -> 'BASE_URL' should return status code 200, res.body.length is 1, res
 test("GET -> 'BASE_URL?category = category.id' should return status code 200, res.body.length is 1, res.body[0] to be defined", async () => {
   const res = await request(app).get(`${BASE_URL}?category=${category.id}`);
 
-  console.log(res.body);
-
   expect(res.status).toBe(200);
   expect(res.body).toHaveLength(1);
   expect(res.body[0]).toBeDefined();
